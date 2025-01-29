@@ -1,26 +1,32 @@
 ---
 title: Welcome to Utile Docs
-description: Get started building your docs site with Starlight.
+description: Documentation for Utile's systems and workflows.
 template: doc
+tableOfContents: false
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Documentation for Utile's systems and workflows.
   image:
-    file: ../../assets/houston.webp
+    alt: The Utile logo, a "U."
+    light: ../../assets/logo-light.svg
+    dark: ../../assets/logo-dark.svg
   actions:
-    - text: Launch Documentation
-      link: /guides/example/
+    - text: New to Utile? Get set up!
+      link: /get_started
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/utile-design/systems-documentation
       icon: external
       variant: minimal
 ---
+import { Steps, Aside, Card, LinkCard } from '@astrojs/starlight/components';
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+Built by [OGRAPHIES Research & Design](ographiesresearch.com) in collaboration with [Utile](https://www.utiledesign.com/).
 
-## Next steps
+{/* import { Card, CardGrid } from '@astrojs/starlight/components'; */}
 
-<CardGrid stagger>
+{/* ## Next steps */}
+
+{/* <CardGrid stagger>
 	<Card title="Update content" icon="pencil">
 		Edit `src/content/docs/index.mdx` to see this page change.
 	</Card>
@@ -33,4 +39,4 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 	<Card title="Read the docs" icon="open-book">
 		Learn more in [the Starlight Docs](https://starlight.astro.build/).
 	</Card>
-</CardGrid>
+</CardGrid> */}

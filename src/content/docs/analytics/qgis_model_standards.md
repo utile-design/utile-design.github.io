@@ -1,6 +1,8 @@
 ---
-title: QGIS Model Standards
+title: QGIS Model Builder Standards
 description: Guideline for developing new QGIS models.
+sidebar: 
+    label: Standards
 ---
 
 

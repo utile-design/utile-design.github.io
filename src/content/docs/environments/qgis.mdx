@@ -1,0 +1,61 @@
+---
+title: Setting Up a QGIS Environment
+description: Set up a QGIS environment.
+sidebar:
+    order: 0
+    label: QGIS
+---
+
+import { Steps, Aside, Card, LinkCard } from '@astrojs/starlight/components';
+
+## Installing Plug-Ins
+
+<Aside type="tip">You will only need to do this once. Plugins installed in QGIS are available to all projects.</Aside>
+
+You'll now install a few plugins that will smooth some parts of your work in QGIS: [changeDataSource](https://plugins.qgis.org/plugins/changeDataSource/), [Project Packager](https://plugins.qgis.org/plugins/ProjectPackager/), and [QuickMapServices](https://plugins.qgis.org/plugins/quick_map_services/).
+
+<Steps>
+    1. Navigate to the plugin management interface (`Plugins > Manage and Install Plugins...`)
+
+    2. Select **Not Installed** to list available plugins that are not installed.
+
+    3. Search for **changeDataSource**. This tool makes it easier to manage the data sources used by a given QGIS project, which will allow you to quickly move between projects in the GIS Database. Click **Install Plugin.**
+
+    4. Search for **Project Packager**. This tool provides functionality that is much like Adobe Indesign's packaging functions---it takes all the data associated with a given project and packages it up alongside the project file. Click **Install Plugin.**
+
+    4. Search for **QuickMapServices**. This tool provides many basemaps that are useful when interacting with spatial data, though they should not be used for final map outputs except when under severe time constraints. Click **Install Plugin.**
+
+    5. Add **QuickMapServices** contributed pack by opening the package settings (`Web > QuickMapServices > Settings`). Navigate to the **More Services** tab and select **Get Contributed Pack**. This makes more basemaps available to you.
+</Steps>
+
+## Connecting to the Utile GIS Database
+
+<Aside type="tip">You will only need to do this once. Database connections are stored by QGIS in a way that is not associated with any specific project.</Aside>
+
+You'll now connect your QGIS software to the Utile GIS Database.
+
+<Steps>
+    1. Locate and right-click the **PostgreSQL** dropdown in the Browser Pane. Select **New Connection**.
+
+    2. Fill out the prompt as follows:
+
+        + **Name**: Utile GIS Database (or whatever makes sense to you---this is just a name you're giving the connection).
+        + **Host**: The value of `DB_HOST` in your `.env` file. [If you have not received a `.env` file, request one!](/get_started#request-a-env-file).
+        + **Database**: The name of the database for your project, generally a placename.
+        + **Port**: The value of `DB_PORT` in your `.env` file.
+        + **SSL Mode**: require
+        + Ensure that **Also list tables with no geometry** is selected.
+
+    3. Set up a credential configuration. Click the green plus sign under the Configurations tab.
+
+    4. Fill out the prompt as follows and click save (where not specified, the defaults are fine):
+
+        + **Name**: Utile Database Credentials
+        + **Username**: The value of `DB_USER` in your `.env` file.
+        + **Password**: The value of `DB_PASS` in your `.env` file.
+
+    5. Click **Test Connection**. You should see a message saying **Connection to Utile GIS Database was successful**. If this is not the case, double-check your settings.
+
+    6. Click **OK**. You can now drag in layers from the GIS database just like you can drag in shapefiles from a folder.
+
+</Steps>

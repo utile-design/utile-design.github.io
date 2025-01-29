@@ -1,0 +1,30 @@
+---
+title: Data Management
+description: Managing data during a project lifecycle.
+sidebar: 
+    order: 1
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+This guide presents data management standards (e.g., naming conventions, directory structures) that should be used by Utile affiliates.
+
+## Directory Structure
+
+<FileTree>
+
+- project_dir       
+    - sandbox    Working folder---welcomes experiments and chaotic intermediate results. **Deleted at project conclusion.**
+        - ...
+        - keller    If there are multiple Utilians working on a given project, create a named folder for your own work in the sandbox.
+            - ...
+    - sources    Unaltered source data, with any accompaying documentation.
+        - ...
+    - derived    Processed data and results used in outputs.
+        - ...
+    - export     Maps, charts, graphs, other exports.
+        - ...
+    - projects   `.qgz`, `.qgs`
+        - ...
+
+</FileTree>

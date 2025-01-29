@@ -2,5 +2,5 @@
 title: Data Dictionary
 description: Table field definitions.
 sidebar:
-    order: 1
+    order: 2
 ---

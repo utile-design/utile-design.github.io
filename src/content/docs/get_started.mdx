@@ -1,0 +1,210 @@
+---
+title: Get Started
+description: Software setup guide for new Utile employees.
+---
+
+import { Steps, Aside, Card, LinkCard } from '@astrojs/starlight/components';
+
+## Request a `.env` File
+
+While at Utile, you will likely need access to privileged resources (e.g., databases, software services). We will provide these to you in a format called a `.env` file, which is simply a plaintext file with a special name that can be used to provide many software environments with privileged information.
+
+<Aside type="tip">If you have not already received a `.env` file, send __J. T. Keller__ a request.</Aside>
+
+### Once You Have It...
+
+Once you've been provided with a `.env` file, save it to your computer. Depending on how your system is set up, it may default to hiding your `.env` file. This is because files that start with `.env` are _usually_ (though not always!) system files. To show hidden files on **macOS**, press `⌘ + Shift + .`. To show hidden files on Windows, open File Explorer and select `View > Show > Hidden Items`.
+
+You don't need to do anything with it yet. Just remember where you stored it.
+
+<Aside type="danger">**Don't share your `.env` file with anyone!** It contains privileged information, remember?</Aside>
+
+## Install Software
+
+### QGIS
+
+[QGIS](https://qgis.org/), formerly Quantum GIS, is a much-beloved, free and open-source (FOSS) Geographic Information System (GIS) developed by an [exceedingly active and passionate user commmunity](https://qgis.org/community/involve/). It is Utile's primary tool for spatial analysis and mapping; it also provides a no-code [Model Designer](https://docs.qgis.org/3.34/en/docs/user_manual/processing/modeler.html) for automating workflows and Python bindings via its [PyQGIS library](https://docs.qgis.org/3.34/en/docs/pyqgis_developer_cookbook).
+
+<Card title="Who Needs This?" icon="information">
++ All urban planners.
+</Card>
+
+#### Installation
+
+<Steps>
+1. Navigate to [QGIS's download page](https://qgis.org/download/).
+
+    __Windows Users:__ Download and run the **Online (OSGeo4W) Installer**, select 'Express Install' and select QGIS LTR (AKA the Long-Term Release) long term release. Launch QGIS. You're done!
+
+    __macOS Users:__ Install the **Long Term Version** and launch QGIS. You're done!
+
+    <Aside type="tip">On MacOS, QGIS may fail to launch after you install it. In Apple's efforts to protect you, it's getting in your way. Follow the instructions on the download page, under __'Tips for first launch.'__</Aside>
+
+2. Drink a glass of water. 🚰
+
+</Steps>
+
+<LinkCard
+  title="Now Set Up Your QGIS Environment!"
+  href="/environments/qgis"
+  description="Install a few plugins, configure a database connection, and get mapping!"
+/>
+
+### Python
+
+[Python](https://www.python.org/) is a general-purpose programming language developed by the Python Software Foundation. As of 2024, it is the world's most popular language, in part because of its simplicity and readability. QGIS is also partially written in Python, and you can access QGIS's functionality using the [PyQGIS Python library](https://docs.qgis.org/3.34/en/docs/pyqgis_developer_cookbook).
+
+Utile uses Python whenver there are general-purpose computing tasks to automate, and some team members develop spatial analysis tools using, for example, its `geopandas` library.
+
+<Card title="Who Needs This?" icon="information">
++ Administrators of Utile's data systems.
++ Anyone tasked with running the [Project Startup Protocol](lifecycle/startup).
++ Anyone trying to [run or develop Python workflows](analytics/r_standards).
+</Card>
+
+#### Installation
+
+<Steps>
+1. If necessary, install Python for your operating system.
+
+    __Windows Users:__ Install the Python using the **full installer** by following [the steps in the official Python documentation](https://docs.python.org/3/using/windows.html).
+
+    __macOS Users:__ Python 3 comes packaged with your system! You shouldn't have to install Python manually.
+
+2. Launch the Python shell.
+
+    __Windows Users:__ Launch __Command Prompt__ and enter the `py` command.
+
+    __macOS Users:__ Launch __Terminal__ and enter the `python3` command.
+
+    You should now be in a Python shell! The line your cursor is on should start with `>>>`, and you should see some information about your Python version, e.g., `Python 3.13.0 (main, Oct  7 2024, 05:02:14) [Clang 16.0.0 (clang-1600.0.26.4)] on darwin`.
+
+3. Run a command. In your Python shell, type...
+
+    ```py
+    print("hello world")
+    ```
+
+4. Drink a glass of water. 🚰
+</Steps>
+
+<LinkCard
+  title="Now Set Up Your Python Environment!"
+  href="/environments/qgis"
+  description="Install basic packages and get cooking!"
+/>
+
+### pgAdmin
+
+[pgAdmin](https://www.pgadmin.org/) is an open source database administration tool, built to work with [PostgreSQL](https://www.postgresql.org/) databases. (If you're only hazily familiar with the concept of a 'database', you can think of it as a very fancy, feature-rich Excel that can hold mountains of data.) Utile uses a PostgreSQL database to provision a standard set of data layers for each incoming project, and you can use pgAdmin to interact with those layers.
+
+<Card title="Who Needs This?" icon="information">
++ Administrators of Utile's data systems.
++ Users who want a non-GIS interface for interacting with the GIS database.
+</Card>
+
+#### Installation
+
+<Steps>
+1. Download the [pgAdmin installer](https://www.pgadmin.org/download/) for your operating system (macOS or Windows). Use the latest version!
+
+2. Run the installer and open pgAdmin to ensure that it runs.
+
+3. Drink a glass of water. 🚰
+</Steps>
+
+<LinkCard
+  title="Now Set Up Your pgAdmin Environment!"
+  href="/environments/qgis"
+  description="Connect to and explore our database."
+/>
+
+### R
+
+[R](https://www.r-project.org/) is a free and open source statistical programming language and software environment developed by the R Core Team and supported by the R Foundation. It has become the go-to for many a data scientist, and offers exceedingly robust spatial support through its `sf` package. Utile uses it to, among others things, source, process, and push standard sets of data layers to our GIS database.
+
+<Card title="Who Needs This?" icon="information">
++ Administrators of Utile's data systems.
++ Anyone tasked with running the [Project Startup Protocol](lifecycle/startup).
+</Card>
+
+#### Installation
+
+<Steps>
+1. [Download the appropriate installer](https://repo.miserver.it.umich.edu/cran/) for your operating system. Make sure that you download the latest release.
+
+    <Aside type="tip">If you're using an M1/M2 Mac, make sure you download the package ending in `-arm64.pkg`. To see if this is you, click the Apple icon on the top left of your screen and select __'About this Mac'__.</Aside>
+
+2. Run the installer.
+
+3. Drink a glass of water. 🚰
+
+4. Continue on to set up RStudio.
+
+</Steps>
+
+### RStudio Desktop
+
+[RStudio Desktop](https://posit.co/download/rstudio-desktop/) is an integrated development environment, or IDE, that is optimized for running R code and interacting with its results, though it also supports Python. It's built by [Posit](https://posit.co/), an Boston-based open source data science company. It is one of two IDEs supported by Utile (the other being Visual Studio Code).
+
+<Card title="Who Needs This?" icon="information">
++ Administrators of Utile's data systems.
++ Anyone tasked with running the [Project Startup Protocol](lifecycle/startup).
++ Anyone trying to [run or develop R workflows](analytics/r_standards).
+</Card>
+
+#### Installation
+
+<Steps>
+1. [Download the appropriate installer](https://posit.co/download/rstudio-desktop/) for your operating system. Make sure that you download the latest release.
+
+2. Run the installer.
+
+3. Drink a glass of water. 🚰
+</Steps>
+
+<LinkCard
+  title="Now Set Up Your R Environment!"
+  href="/environments/qgis"
+  description="Install basic packages and get cooking!"
+/>
+
+### Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com/) is an extremely extensible, widely used code editor. While it lacks many of RStudio's features out of the box, community extensions can give it much of the same functionality. It's built by [Microsoft](https://www.microsoft.com). It is one of two IDEs supported by Utile (the other being RStudio).
+
+<Card title="Who Needs This?" icon="information">
++ Administrators of Utile's data systems.
++ Anyone tasked with running the [Project Startup Protocol](lifecycle/startup).
++ Anyone trying to [run or develop Python workflows](analytics/r_standards), or [R workflows](analytics/r_standards) (if you're opting out of RStudio).
+</Card>
+
+#### Installation
+
+<Steps>
+1. [Download the appropriate installer](https://code.visualstudio.com/) for your operating system. Make sure that you download the latest release.
+
+2. Run the installer.
+
+3. Drink a glass of water. 🚰
+</Steps>
+
+### GitHub Desktop
+
+[GitHub](https://github.com/) is a widely-used platform for version control and code-sharing, built on top of the [git](https://git-scm.com/) version control system. It's essentially fancy, fussy Google Docs for software. Since 2018, it has been owned by [Microsoft](https://www.microsoft.com). This is its desktop client. While both RStudio and Visual Studio Code offer git (and therefore GitHub) version control tools, it can be easier to interact with this desktop client instead.
+
+<Card title="Who Needs This?" icon="information">
++ Administrators of Utile's data systems or [GitHub repositories](https://github.com/utile-design).
++ Anyone tasked with running the [Project Startup Protocol](lifecycle/startup).
++ Anyone trying to [run or develop Python workflows](analytics/r_standards), [R workflows](analytics/r_standards), [QGIS models](analytics/qgis_model_standards), or [PyQGIS workflows](analytics/pyqgis_standards).
+</Card>
+
+#### Installation
+
+<Steps>
+1. [Download the appropriate installer](https://desktop.github.com/download/) for your operating system. Make sure that you download the latest release.
+
+2. Run the installer.
+
+3. Drink a glass of water. 🚰
+</Steps>
