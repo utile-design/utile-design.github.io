@@ -2,8 +2,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-import tailwind from '@astrojs/tailwind';
-
 export default defineConfig({
     site: 'https://utile-design.github.io',
     integrations: [starlight({
@@ -13,9 +11,9 @@ export default defineConfig({
             dark: './src/assets/logo-dark.svg'
         },
         favicon: '/favicon.png',
-        social: {
-            github: 'https://github.com/utile-design',
-        },
+        social: [
+            { icon: 'github', label: 'GitHub', href: 'https://github.com/utile-design' }
+        ],
         sidebar: [
             'get_started',
             {
@@ -86,9 +84,6 @@ export default defineConfig({
             // Path to your Tailwind base styles:
             './src/tailwind.css',
           ],
-		}), tailwind({
-            // Disable the default base styles:
-            applyBaseStyles: false,
-        })
+		})
     ],
 });
